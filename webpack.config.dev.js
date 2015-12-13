@@ -25,6 +25,10 @@ module.exports = {
     {
       test: /\.scss$/,
       loader: 'style!css!autoprefixer!sass'
+    },
+    {
+      test: /\.jpeg$/,
+      loader: 'file-loader'
     }]
   }
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+let address = require('../assets/race-car.jpeg');
 
 class Home extends React.Component {
   handleSubmit(e) {
@@ -10,6 +11,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
+        <img src={address} />
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="">
             <input type="text" className="" ref="userName" />
