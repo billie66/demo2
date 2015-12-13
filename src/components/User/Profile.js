@@ -28,7 +28,7 @@ class Profile extends React.Component {
     const userName = this.props.params.userName;
     return (
       <div>
-        <UserInfo userInfo={this.state.bio} />
+        <UserInfo userName={userName} userInfo={this.state.bio} />
         <Repos repos={this.state.repos} />
       </div>
     );
