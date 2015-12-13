@@ -1,10 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import Home from './components/Home';
+import Profile from './components/User/profile';
 
 export default (
   <Route path='/' component={App}>
-    <Route path='home' component={Home} />
+    <IndexRoute component={Home} />
+    <Route path='profile/:userName' component={Profile} />
   </Route>
 );

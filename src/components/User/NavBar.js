@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Navbar extends React.Component {
+class NavBar extends React.Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default NavBar;
