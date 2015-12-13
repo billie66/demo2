@@ -3,18 +3,16 @@ import { _ } from 'underscore';
 
 class UserInfo extends React.Component {
   render() {
-    const fields = ['public_repos', 'followers', 'following'];
-    const infoList = _.map(fields, (field) => {
-      return (
-        <li key={field}>{field}: {this.props.userInfo[field]}</li>
-      );
-    });
-
+    const userInfo = this.props.userInfo;
     return (
       <div>
         <p>{this.props.userName}</p>
         <img src={this.props.userInfo['avatar_url']} />
-        <ul>{ infoList  }</ul>
+        <ul>
+          <li>followers: {userInfo.followers}</li>
+          <li>following: {userInfo.following}</li>
+          <li>repos: {userInfo.public_repos}</li>
+        </ul>
       </div>
     );
   }
