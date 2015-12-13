@@ -8,7 +8,7 @@ class Profile extends React.Component {
     super();
     this.state = {
       repos: [],
-      bio: {},
+      user: {},
     };
   }
 
@@ -18,7 +18,7 @@ class Profile extends React.Component {
     helpers.getGithubInfo(userName)
       .then((data) => {
         this.setState({
-          bio: data.bio,
+          user: data.user,
           repos: data.repos
         });
       });
@@ -28,7 +28,7 @@ class Profile extends React.Component {
     const userName = this.props.params.userName;
     return (
       <div>
-        <UserInfo userName={userName} userInfo={this.state.bio} />
+        <UserInfo userName={userName} userInfo={this.state.user} />
         <Repos repos={this.state.repos} />
       </div>
     );

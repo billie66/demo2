@@ -5,7 +5,11 @@ class Repos extends React.Component {
   render() {
     const repoList = _.map(this.props.repos, (repo) => {
       return (
-        <li key={repo['id']}>{repo['name']} : {repo["description"]}</li>
+        <li key={repo.id}>
+          <p>{repo.language}</p>
+          <p>{repo.name}</p>
+          <p>{repo.description}</p>
+        </li>
       );
     });
 
