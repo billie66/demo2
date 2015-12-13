@@ -4,7 +4,7 @@ class Home extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const userName = this.refs.userName.value;
-    this.props.history.pushState(null, `user/${userName}`);
+    this.props.history.pushState(null, `profile/${userName}`);
   }
 
   render() {

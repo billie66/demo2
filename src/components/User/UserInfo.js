@@ -3,9 +3,13 @@ import React from 'react';
 class UserInfo extends React.Component {
   render() {
     return (
-      <div>UserInfo</div>
+      <div>{this.props.userInfo}</div>
     );
   }
 }
+
+UserInfo.propTypes = {
+  userInfo: React.PropTypes.object.isRequired,
+};
 
 export default UserInfo;
