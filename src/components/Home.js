@@ -1,5 +1,4 @@
 import React from 'react';
-import url from '../assets/race-car.jpeg';
 
 class Home extends React.Component {
   handleSubmit(e) {
@@ -11,7 +10,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <img src={url} />
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="">
             <input type="text" className="" ref="userName" />
