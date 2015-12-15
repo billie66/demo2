@@ -30,3 +30,17 @@ export class App extends React.Component {
   ...
 }
 ```
+
+### 借助 devtool 配置选项生成 sourcemaps
+
+[devtool](https://webpack.github.io/docs/configuration.html#devtool)
+
+* Chrome and FF 不能更新 sourcemaps, Safari 可以
+
+>Note that sourcemaps won't get updated in [Chrome](https://code.google.com/p/chromium/issues/detail?id=492902) and Firefox due to browser level bugs!
+
+[github issue](https://github.com/survivejs/webpack_react/issues/204)
+
+### node
+
+>npm tip: if you switched Node version and binary packages broke, run "npm rebuild"

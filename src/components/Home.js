@@ -11,11 +11,11 @@ class Home extends React.Component {
     return (
       <div className="home">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div className="">
-            <input type="text" className="" ref="userName" />
+          <div>
+            <input type="text" ref="userName" />
           </div>
-          <div className="">
-            <button type="submit" className="">GitHub</button>
+          <div>
+            <button type="submit">GitHub</button>
           </div>
         </form>
       </div>
