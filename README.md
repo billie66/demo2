@@ -44,3 +44,9 @@ export class App extends React.Component {
 ### node
 
 >npm tip: if you switched Node version and binary packages broke, run "npm rebuild"
+
+### 安装 material-ui
+
+```
+npm install --save material-ui
+```
