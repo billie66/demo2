@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from './shared/NavBar';
 
 class Playground extends React.Component {
 
@@ -10,7 +11,8 @@ class Playground extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="home">
+        <NavBar history={this.props.history} />
         <form onSubmit={this._handleSubmit.bind(this)}>
           <div>
             <input type="text" ref="userName" />
