@@ -5,8 +5,7 @@ class About extends React.Component {
 
   render() {
     return (
-      <div className="home">
-        <NavBar history={this.props.history} />
+      <div className="about">
         this is about page
       </div>
     );

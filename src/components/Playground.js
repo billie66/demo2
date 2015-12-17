@@ -11,8 +11,7 @@ class Playground extends React.Component {
 
   render() {
     return (
-      <div className="home">
-        <NavBar history={this.props.history} />
+      <div className="playground">
         <form onSubmit={this._handleSubmit.bind(this)}>
           <div>
             <input type="text" ref="userName" />

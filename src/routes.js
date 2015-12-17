@@ -8,7 +8,7 @@ import Playground from './components/Playground';
 
 export default (
   <Route path='/' component={App}>
-    <Route path='home' component={Home} />
+    // <Route path='home' component={Home} />
     <Route path='profile/:userName' component={Profile} />
     <Route path='playground' component={Playground} />
     <Route path='about' component={About} />
