@@ -16,7 +16,7 @@ class NavBar extends React.Component {
     });
   }
 
-  componentWillReceiveProps(nextProps, nextContext) {
+  componentWillReceiveProps(nextProps) {
     this.setState({
       tabIndex: this._getSelectedIndex(),
     });
@@ -45,28 +45,28 @@ class NavBar extends React.Component {
     };
     return (
       <div className="navbar">
-      <Tabs
-        style={styles.tabs}
-        tabItemContainerStyle={{backgroundColor: '#fff'}}
-        inkBarStyle={{height: '4px', marginTop: '-4px'}}
-        value={this.state.tabIndex}
-        onChange={this._handleTabsChange.bind(this)}>
-        <Tab
-          value='1'
-          label='Home'
-          route='/home'
-          style={styles.tab} />
-        <Tab
-          value='2'
-          label='Playground'
-          route='/playground'
-          style={styles.tab} />
-        <Tab
-          value='3'
-          label='About'
-          route='/about'
-          style={styles.tab} />
-      </Tabs>
+        <Tabs
+          style={styles.tabs}
+          tabItemContainerStyle={{backgroundColor: '#fff'}}
+          inkBarStyle={{height: '4px', marginTop: '-4px'}}
+          value={this.state.tabIndex}
+          onChange={this._handleTabsChange.bind(this)}>
+          <Tab
+            value='1'
+            label='Home'
+            route='/home'
+            style={styles.tab} />
+          <Tab
+            value='2'
+            label='Playground'
+            route='/playground'
+            style={styles.tab} />
+          <Tab
+            value='3'
+            label='About'
+            route='/about'
+            style={styles.tab} />
+        </Tabs>
       </div>
     );
   }
