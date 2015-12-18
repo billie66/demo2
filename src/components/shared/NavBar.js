@@ -1,7 +1,6 @@
 import React from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
-import Paper from 'material-ui/lib/paper';
 
 const NavBar = React.createClass({
   getInitialState() {
@@ -35,23 +34,15 @@ const NavBar = React.createClass({
 
   render() {
     let styles = {
-      root: {
-        position: 'fixed',
-        height: 64,
-        top: 0,
-        right: 0,
-        zIndex: 4,
-        width: '100%',
-      },
       tabs: {
-        width: '300px',
+        width: '390px',
         position: 'absolute',
         right: '60px',
         textTransform: 'uppercase',
       },
       tab: {
         height: '64px',
-        color: '#727272',
+        color: '#fff',
       },
       inkBar: {
         height: '4px',
@@ -59,10 +50,10 @@ const NavBar = React.createClass({
       },
     };
     return (
-      <Paper style={styles.root}>
+      <div className="app-header">
         <Tabs
           style={styles.tabs}
-          tabItemContainerStyle={{backgroundColor: '#fff'}}
+          tabItemContainerStyle={{backgroundColor: 'transparent'}}
           inkBarStyle={styles.inkBar}
           value={this.state.tabIndex}
           onChange={this._handleTabsChange}>
@@ -82,7 +73,7 @@ const NavBar = React.createClass({
             route='/about'
             style={styles.tab} />
         </Tabs>
-      </Paper>
+      </div>
     );
   }
 });
