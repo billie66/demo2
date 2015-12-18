@@ -1,13 +1,19 @@
 import React from 'react';
 import LeftNav from 'material-ui/lib/left-nav';
 
-let menuItems = [
-  { route: '/home', text: 'Home' },
-  { route: '/account', text: 'Account' },
-  { route: '/about', text: 'About' },
-];
+import List from 'material-ui/lib/lists/list';
+import ListItem from 'material-ui/lib/lists/list-item';
+import {SelectableContainerEnhance} from 'material-ui/lib/hoc/selectable-enhance';
+
+const SelectableList = SelectableContainerEnhance(List);
 
 const AppLeftNav = React.createClass({
+  getInitialState() {
+    return {
+      leftNavOpen: false,
+    };
+  },
+
   render() {
     let styles = {
       header: {
@@ -22,42 +28,73 @@ const AppLeftNav = React.createClass({
         marginBottom: '8px'
       }
     };
-
-    let header = (
-      <div style={styles.header}>
-        S2
-      </div>
-    );
-
     return (
       <LeftNav
-        ref="leftNav"
         docked={false}
-        isInitiallyOpen={false}
-        header={header}
-        menuItems={menuItems}
-        selectedIndex={this._getSelectedIndex()}
-        onChange={this._onLeftNavChange} />
+        open={this.state.leftNavOpen}
+        onRequestChange={this.handleChangeRequestLeftNav}>
+        <div style={styles.header}
+          onTouchTap={this.handleTouchTapHeader}>
+          S2
+        </div>
+        <SelectableList
+          valueLink={{
+            value: this._getSelectedIndex(),
+            requestChange: this.handleRequestChangeList,
+          }}>
+          <ListItem
+            value="home"
+            primaryText="Home"/>
+          <ListItem
+            value="account"
+            primaryText="Account"/>
+          <ListItem
+            value="about"
+            primaryText="About"/>
+        </SelectableList>
+      </LeftNav>
     );
   },
 
   toggle() {
-    this.refs.leftNav.toggle();
+    this.setState({leftNavOpen: !this.state.leftNavOpen});
   },
 
   _getSelectedIndex() {
-    let currentItem;
-
+    let menuItems = ['home', 'account', 'about'];
     for (let i = menuItems.length - 1; i >= 0; i--) {
-      currentItem = menuItems[i];
-      if (currentItem.route && this.props.history.isActive(currentItem.route)) return i;
+      if (menuItems[i] && this.props.history.isActive(menuItems[i])) return menuItems[i];
     }
   },
 
-  _onLeftNavChange(e, key, menuItem) {
-    this.props.history.pushState(null, menuItem.route);
+  handleChangeRequestLeftNav(open) {
+    this.setState({
+      leftNavOpen: open,
+    });
+  },
+
+  handleRequestChangeList(event, value) {
+    this.props.history.push(value);
+    this.setState({
+      leftNavOpen: false,
+    });
+  },
+
+  handleRequestChangeLink(event, value) {
+    window.location = value;
+    this.setState({
+      leftNavOpen: false,
+    });
+  },
+
+  handleTouchTapHeader() {
+    this.props.history.push('/');
+    this.setState({
+      leftNavOpen: false,
+    });
   },
 
 });
 
 export default AppLeftNav;
+
