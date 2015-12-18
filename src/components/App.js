@@ -2,7 +2,6 @@ import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import '../stylesheets/main.scss';
 import NavBar from './shared/NavBar';
-import Footer from './shared/Footer';
 import AppLeftNav from './shared/AppLeftNav';
 
 const App = React.createClass({
@@ -22,7 +21,6 @@ const App = React.createClass({
         <AppLeftNav ref='leftNav' history={this.props.history} />
 
         {this.props.children}
-        <Footer />
       </div>
     );
   },
