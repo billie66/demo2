@@ -6,7 +6,7 @@ class UserInfo extends React.Component {
     const userInfo = this.props.userInfo;
     return (
       <div>
-        <p>{this.props.userName}</p>
+        <p>{userInfo.login}</p>
         <img src={this.props.userInfo['avatar_url']} />
         <ul>
           <li>followers: {userInfo.followers}</li>
@@ -19,7 +19,6 @@ class UserInfo extends React.Component {
 }
 
 UserInfo.propTypes = {
-  userName: React.PropTypes.string.isRequired,
   userInfo: React.PropTypes.object.isRequired
 };
 

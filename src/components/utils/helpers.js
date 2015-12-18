@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function getRepos(username){
-  return axios.get(`https://api.github.com/users/${username}/repos?per_page=100`);
+  return axios.get(`https://api.github.com/users/${username}/repos?per_page=5`);
 };
 
 function getUserInfo(username){
