@@ -74,21 +74,14 @@ const AppLeftNav = React.createClass({
   },
 
   handleRequestChangeList(event, value) {
-    this.props.history.push(value);
-    this.setState({
-      leftNavOpen: false,
-    });
-  },
-
-  handleRequestChangeLink(event, value) {
-    window.location = value;
+    this.props.history.pushState(null, value);
     this.setState({
       leftNavOpen: false,
     });
   },
 
   handleTouchTapHeader() {
-    this.props.history.push('/');
+    this.props.history.pushState(null, '/');
     this.setState({
       leftNavOpen: false,
     });
