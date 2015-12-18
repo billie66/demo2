@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import '../stylesheets/main.scss';
 import NavBar from './shared/NavBar';
-// import AppLeftNav from './shared/AppLeftNav';
+import AppLeftNav from './shared/AppLeftNav';
 
 class App extends React.Component {
   componentWillMount() {
@@ -16,9 +16,9 @@ class App extends React.Component {
   render() {
     return (
       <div >
-        { this.state.renderTabs ? (
-          <NavBar history={this.props.history} />
-        ) : this._getAppBar() }
+        { this.state.renderTabs ? <NavBar history={this.props.history} /> : this._getAppBar() }
+
+        <AppLeftNav ref='leftNav' history={this.props.history} />
 
         {this.props.children}
       </div>
@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div>
         <AppBar
-          onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap}
+          onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap.bind(this)}
           title={title}
           zDepth={1}
           style={{position: 'absolute', top: 0}}/>
@@ -41,8 +41,8 @@ class App extends React.Component {
     );
   }
 
-  _onLeftIconButtonTouchTap() {
-    // this.refs.leftNav.toggle();
+  _onLeftIconButtonTouchTap(e) {
+    this.refs.leftNav.toggle();
   }
 }
 
