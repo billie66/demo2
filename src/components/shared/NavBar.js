@@ -29,7 +29,7 @@ class NavBar extends React.Component {
 
   _getSelectedIndex() {
     return this.props.history.isActive('/home') ? '1' :
-      this.props.history.isActive('/playground') ? '2' :
+      this.props.history.isActive('/account') ? '2' :
       this.props.history.isActive('/about') ? '3' : '0';
   }
 
@@ -58,8 +58,8 @@ class NavBar extends React.Component {
             style={styles.tab} />
           <Tab
             value='2'
-            label='Playground'
-            route='/playground'
+            label='Account'
+            route='/account'
             style={styles.tab} />
           <Tab
             value='3'

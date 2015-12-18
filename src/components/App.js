@@ -5,7 +5,7 @@ import NavBar from './shared/NavBar';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div >
         <NavBar history={this.props.history} />
         {this.props.children}
       </div>

@@ -1,17 +1,16 @@
 import React from 'react';
-import NavBar from './shared/NavBar';
 
-class Playground extends React.Component {
+class Account extends React.Component {
 
   _handleSubmit(e) {
     e.preventDefault();
     const userName = this.refs.userName.value;
-    this.props.history.pushState(null, `profile/${userName}`);
+    this.props.history.pushState(null, `account/${userName}`);
   }
 
   render() {
     return (
-      <div className="playground">
+      <div className="account">
         <form onSubmit={this._handleSubmit.bind(this)}>
           <div>
             <input type="text" ref="userName" />
@@ -25,4 +24,4 @@ class Playground extends React.Component {
   }
 }
 
-export default Playground;
+export default Account;
