@@ -54,8 +54,8 @@ const AppLeftNav = React.createClass({
     }
   },
 
-  _onLeftNavChange(e, key, payload) {
-    this.props.history.pushState(null, payload.route);
+  _onLeftNavChange(e, key, menuItem) {
+    this.props.history.pushState(null, menuItem.route);
   },
 
 });
