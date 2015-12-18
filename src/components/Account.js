@@ -4,22 +4,20 @@ import helpers from './utils/helpers';
 import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
 
-class Account extends React.Component {
-  constructor(props) {
-    super(props);
-
+const Account = React.createClass({
+  getInitialState() {
     let minDate = new Date();
     let maxDate = new Date();
     minDate.setFullYear(minDate.getFullYear() - 1);
     minDate.setHours(0, 0, 0, 0);
 
-    this.state = {
+    return {
       minDate: minDate,
       repos: [],
       user: {},
       birthday: {},
     };
-  }
+  },
 
   _handleSubmit(e) {
     e.preventDefault();
@@ -33,7 +31,7 @@ class Account extends React.Component {
           repos: data.repos
         });
       });
-  }
+  },
 
   render() {
     let GitHubInfo;
@@ -49,7 +47,7 @@ class Account extends React.Component {
 
     return (
       <div className='account'>
-        <form onSubmit={this._handleSubmit.bind(this)}>
+        <form onSubmit={this._handleSubmit}>
           <div>
             <input type='text' ref='userName' />
           </div>
@@ -68,6 +66,6 @@ class Account extends React.Component {
       </div>
     );
   }
-}
+});
 
 export default Account;

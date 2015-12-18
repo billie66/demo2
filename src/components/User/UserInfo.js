@@ -1,7 +1,7 @@
 import React from 'react';
 import { _ } from 'underscore';
 
-class UserInfo extends React.Component {
+const UserInfo = React.createClass({
   render() {
     const userInfo = this.props.userInfo;
     return (
@@ -16,10 +16,6 @@ class UserInfo extends React.Component {
       </div>
     );
   }
-}
-
-UserInfo.propTypes = {
-  userInfo: React.PropTypes.object.isRequired
-};
+});
 
 export default UserInfo;

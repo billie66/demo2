@@ -1,7 +1,7 @@
 import React from 'react';
 import { _ } from 'underscore';
 
-class Repos extends React.Component {
+const Repos = React.createClass({
   render() {
     const repoList = _.map(this.props.repos, (repo) => {
       return (
@@ -19,10 +19,6 @@ class Repos extends React.Component {
       </ul>
     );
   }
-}
-
-Repos.propTypes = {
-  repos: React.PropTypes.array.isRequired
-};
+});
 
 export default Repos;
