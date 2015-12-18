@@ -1,7 +1,6 @@
 import React from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
-import Paper from 'material-ui/lib/Paper';
 
 const NavBar = React.createClass({
   getInitialState() {
@@ -59,7 +58,7 @@ const NavBar = React.createClass({
       },
     };
     return (
-      <Paper style={styles.root}>
+      <div style={styles.root}>
         <Tabs
           style={styles.tabs}
           tabItemContainerStyle={{backgroundColor: '#fff'}}
@@ -82,7 +81,7 @@ const NavBar = React.createClass({
             route='/about'
             style={styles.tab} />
         </Tabs>
-      </Paper>
+      </div>
     );
   }
 });
