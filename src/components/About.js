@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './shared/Footer';
 
 const About = React.createClass({
 
@@ -6,6 +7,7 @@ const About = React.createClass({
     return (
       <div className="about">
         this is about page
+        <Footer />
       </div>
     );
   }

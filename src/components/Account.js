@@ -3,6 +3,7 @@ import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import helpers from './utils/helpers';
 import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
+import Footer from './shared/Footer';
 
 const Account = React.createClass({
   getInitialState() {
@@ -51,7 +52,7 @@ const Account = React.createClass({
           <div>
             <input type='text' ref='userName' />
           </div>
-
+          { GitHubInfo }
           <DatePicker
             ref='birthday'
             hintText="Your Birthday"
@@ -59,10 +60,10 @@ const Account = React.createClass({
             minDate={this.state.minDate}  />
 
           <div>
-            <button type='submit'></button>
+            <button type='submit'>Save</button>
           </div>
         </form>
-        { GitHubInfo }
+        <Footer />
       </div>
     );
   }
