@@ -6,15 +6,17 @@ const Repos = React.createClass({
     const repoList = _.map(this.props.repos, (repo) => {
       return (
         <li key={repo.id}>
-          <p>{repo.language}</p>
-          <p>{repo.name}</p>
-          <p>{repo.description}</p>
+          <div>
+            <p className='name'>{repo.name}</p>
+            <p className='desc'>{repo.description}</p>
+          </div>
+          <p className='lang'>{repo.language}</p>
         </li>
       );
     });
 
     return (
-      <ul>
+      <ul className="user-repos">
         { repoList }
       </ul>
     );

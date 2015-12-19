@@ -1,15 +1,21 @@
 html {
   font-family: sans-serif;
+  background-color: #fafafa;
 }
 
 body {
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #727272;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 .app-wrap {
   display: flex;
   flex-direction: column;
-  background-color: #fafafa;
 }
 
 .app-header {
@@ -49,8 +55,55 @@ body {
   }
 }
 
-.account, .about {
+.account .content {
+  width: 500px;
+  margin: 100px auto;
+  padding: 40px;
+}
+.user-info {
+  img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 30px auto;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    li {
+      flex-grow: 1;
+      border-left: 1px solid rgba(0,0,0,0.1);
+      &:first-child {
+        border-left: none;
+      }
+      span {
+        display: block;
+        font-size: 14px;
+      }
+      b {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.user-repos {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  li {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+}
+
+.about {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .app-footer {

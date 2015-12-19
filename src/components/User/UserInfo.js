@@ -5,13 +5,21 @@ const UserInfo = React.createClass({
   render() {
     const userInfo = this.props.userInfo;
     return (
-      <div>
-        <p>{userInfo.login}</p>
+      <div className='user-info'>
         <img src={this.props.userInfo['avatar_url']} />
         <ul>
-          <li>followers: {userInfo.followers}</li>
-          <li>following: {userInfo.following}</li>
-          <li>repos: {userInfo.public_repos}</li>
+          <li>
+            <b>{userInfo.followers}</b>
+            <span>followers</span>
+          </li>
+          <li>
+            <b>{userInfo.following}</b>
+            <span>following</span>
+          </li>
+          <li>
+            <b>{userInfo.public_repos}</b>
+            <span>repos</span>
+          </li>
         </ul>
       </div>
     );

@@ -1,9 +1,13 @@
 import React from 'react';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
+import RaisedButton from 'material-ui/lib/raised-button';
+import TextField from 'material-ui/lib/text-field';
+import Card from 'material-ui/lib/card/card';
 import helpers from './utils/helpers';
 import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
 import Footer from './shared/Footer';
+import { _ } from 'underscore';
 
 const Account = React.createClass({
   getInitialState() {
@@ -22,7 +26,7 @@ const Account = React.createClass({
 
   _handleSubmit(e) {
     e.preventDefault();
-    const userName = this.refs.userName.value;
+    const userName = this.refs.username.getValue();
     const birthday = this.refs.birthday.getDate();
 
     helpers.getGithubInfo(userName)
@@ -37,32 +41,42 @@ const Account = React.createClass({
   render() {
     let GitHubInfo;
 
-    if(this.state.user && this.state.repos) {
+    if(!_.isEmpty(this.state.user)) {
       GitHubInfo = (
         <div>
           <UserInfo userInfo={this.state.user} />
           <Repos repos={this.state.repos} />
+
+          <RaisedButton
+            secondary={true}
+            label="save account" />
         </div>
       );
     }
 
     return (
       <div className='account'>
-        <form onSubmit={this._handleSubmit}>
-          <div>
-            <input type='text' ref='userName' />
-          </div>
-          { GitHubInfo }
+        <Card className='content'>
           <DatePicker
             ref='birthday'
             hintText="Your Birthday"
             autoOk={false}
             minDate={this.state.minDate}  />
 
-          <div>
-            <button type='submit'>Save</button>
-          </div>
-        </form>
+          <form onSubmit={this._handleSubmit}>
+            <TextField
+              hintText="Your Github Account"
+              ref='username'/>
+
+            <RaisedButton
+              type="submit"
+              primary={true}
+              label="fetch" />
+          </form>
+
+          { GitHubInfo }
+        </Card>
+
         <Footer />
       </div>
     );
