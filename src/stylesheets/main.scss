@@ -3,6 +3,11 @@ html {
   background-color: #fafafa;
 }
 
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -129,3 +134,5 @@ ul {
   font-size: 25px;
   color: rgba(255, 255, 255, 0.54);
 }
+
+@import 'about';
