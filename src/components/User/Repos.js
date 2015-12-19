@@ -8,9 +8,9 @@ const Repos = React.createClass({
         <li key={repo.id}>
           <div>
             <p className='name'>{repo.name}</p>
-            <p className='desc'>{repo.description}</p>
+            <p className='lang'>{repo.language}</p>
           </div>
-          <p className='lang'>{repo.language}</p>
+          <p className='desc'>{repo.description}</p>
         </li>
       );
     });

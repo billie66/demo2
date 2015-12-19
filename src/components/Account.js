@@ -1,6 +1,7 @@
 import React from 'react';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import RaisedButton from 'material-ui/lib/raised-button';
+import FlatButton from 'material-ui/lib/flat-button';
 import TextField from 'material-ui/lib/text-field';
 import Card from 'material-ui/lib/card/card';
 import helpers from './utils/helpers';
@@ -48,8 +49,9 @@ const Account = React.createClass({
           <Repos repos={this.state.repos} />
 
           <RaisedButton
-            secondary={true}
-            label="save account" />
+            style={{display: 'block', margin: '0 auto', width: '180px'}}
+            primary={true}
+            label="save" />
         </div>
       );
     }
@@ -59,19 +61,19 @@ const Account = React.createClass({
         <Card className='content'>
           <DatePicker
             ref='birthday'
-            hintText="Your Birthday"
+            hintText="Birthday"
             autoOk={false}
             minDate={this.state.minDate}  />
 
           <form onSubmit={this._handleSubmit}>
             <TextField
-              hintText="Your Github Account"
+              hintText="Github Account"
               ref='username'/>
 
-            <RaisedButton
+            <FlatButton
               type="submit"
               primary={true}
-              label="fetch" />
+              label="search github" />
           </form>
 
           { GitHubInfo }

@@ -56,7 +56,7 @@ ul {
 }
 
 .account .content {
-  width: 500px;
+  width: 600px;
   margin: 100px auto;
   padding: 40px;
 }
@@ -98,6 +98,21 @@ ul {
   border-top: 1px solid rgba(0,0,0,0.1);
   li {
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #00bcd4;
+    }
+    .desc {
+      font-size: 15px;
+    }
+    .lang {
+      font-size: 14px;
+    }
   }
 }
 
@@ -107,10 +122,10 @@ ul {
 }
 
 .app-footer {
-  background-color: #DFDCD7;
+  background-color: #212121;
   padding-top: 100px;
   padding-bottom: 100px;
-  color: #ff4081;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.54);
 }
