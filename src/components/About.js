@@ -4,7 +4,6 @@ import Footer from './shared/Footer';
 import AvatarURL from '../assets/peter.png';
 
 const About = React.createClass({
-
   render() {
     return (
       <div className="about">
@@ -15,7 +14,7 @@ const About = React.createClass({
               web 开发者，在线教育狂热分子，很多朋友叫他“录视频的那个 Peter ”，自封“视频死磕侠” 。
             </div>
             <a href="https://github.com/happypeter">
-              <RaisedButton label="下载简历" secondary={true} labelStyle={{fontSize: '16px'}}/>
+              <RaisedButton label="下载简历" primary={true} labelStyle={{fontSize: '16px'}}/>
             </a>
           </div>
           <div className="paper">
