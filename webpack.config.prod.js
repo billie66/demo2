@@ -35,7 +35,7 @@ module.exports = {
       loader: 'style!css!autoprefixer!sass'
     },
     {
-      test: /\.jpe?g$/,
+      test: /\.(jpe?g|png)$/,
       loader: 'file-loader'
     }]
   }
