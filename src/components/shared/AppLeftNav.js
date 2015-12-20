@@ -25,7 +25,11 @@ const AppLeftNav = React.createClass({
         backgroundColor: '#00bcd4',
         paddingLeft: '24px',
         paddingTop: '0px',
-        marginBottom: '8px'
+        marginBottom: '8px',
+      },
+      selectedList: {
+        color: '#ff4081',
+        backgroundColor: 'rgba(0, 0, 0, 0.03)',
       }
     };
     return (
@@ -38,6 +42,7 @@ const AppLeftNav = React.createClass({
           S2
         </div>
         <SelectableList
+          selectedItemStyle={styles.selectedList}
           valueLink={{
             value: this._getSelectedIndex(),
             requestChange: this.handleRequestChangeList,
