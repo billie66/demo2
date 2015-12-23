@@ -48,5 +48,5 @@ export class App extends React.Component {
 ### 安装 material-ui
 
 ```
-npm install --save material-ui
+npm install --save material-ui@0.14.0-rc2
 ```
