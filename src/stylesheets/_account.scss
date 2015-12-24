@@ -1,9 +1,10 @@
 .account {
   flex-grow: 1;
   overflow-y: scroll;
+  padding-top: 64px;
   .content {
     width: 600px;
-    margin: 100px auto 100px;
+    margin: 20px auto;
     padding: 40px;
   }
   .user-info {
@@ -60,5 +61,10 @@
         font-size: 14px;
       }
     }
+  }
+}
+@media (min-width: 700px) {
+  .account {
+    padding-top: 0;
   }
 }

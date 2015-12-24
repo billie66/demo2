@@ -8,7 +8,7 @@ import Footer from './shared/Footer';
 const App = React.createClass({
   componentWillMount() {
     let setTabsState = function() {
-      this.setState({renderTabs: !(document.body.clientWidth <= 647)});
+      this.setState({renderTabs: !(document.body.clientWidth <= 700)});
     }.bind(this);
     setTabsState();
     window.onresize = setTabsState;
