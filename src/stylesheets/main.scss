@@ -28,17 +28,13 @@ ul {
 .app-header {
   flex-shrink: 0;
   height: 64px;
-  top: 0;
-  right: 0;
   z-index: 4;
-  width: 100%;
   background-color: #00bcd4;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 
 .home {
-  width: 100%;
-  height: 100%;
+  flex-grow: 1;
   background-image: url('../assets/home-bg.jpg');
   background-size: cover;
   background-position: center center;
@@ -63,8 +59,8 @@ ul {
 
 .app-footer {
   background-color: #00bcd4;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
   font-size: 25px;
   color: #fff;
