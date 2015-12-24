@@ -7,7 +7,6 @@ import Card from 'material-ui/lib/card/card';
 import helpers from './utils/helpers';
 import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
-import Footer from './shared/Footer';
 import { _ } from 'underscore';
 
 const Account = React.createClass({
@@ -78,8 +77,6 @@ const Account = React.createClass({
 
           { GitHubInfo }
         </Card>
-
-        <Footer />
       </div>
     );
   }

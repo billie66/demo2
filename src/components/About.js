@@ -1,6 +1,5 @@
 import React from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
-import Footer from './shared/Footer';
 import AvatarURL from '../assets/peter.png';
 
 const About = React.createClass({
@@ -35,7 +34,6 @@ const About = React.createClass({
             </ul>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
