@@ -5,14 +5,14 @@ import NavBar from './shared/NavBar';
 import AppLeftNav from './shared/AppLeftNav';
 import Footer from './shared/Footer';
 
-const App = React.createClass({
+class App extends React.Component {
   componentWillMount() {
     let setTabsState = function() {
       this.setState({renderTabs: !(document.body.clientWidth <= 700)});
     }.bind(this);
     setTabsState();
     window.onresize = setTabsState;
-  },
+  }
 
   render() {
     return (
@@ -25,7 +25,7 @@ const App = React.createClass({
         <Footer />
       </div>
     );
-  },
+  }
 
   _getAppBar() {
     let title = this.props.history.isActive('/home') ? 'Home' :
@@ -35,17 +35,17 @@ const App = React.createClass({
     return (
       <div>
         <AppBar
-          onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap}
+          onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap.bind(this)}
           title={title}
           zDepth={1}
           style={{position: 'absolute', top: 0}}/>
       </div>
     );
-  },
+  }
 
   _onLeftIconButtonTouchTap(e) {
     this.refs.leftNav.toggle();
   }
-});
+}
 
 export default App;

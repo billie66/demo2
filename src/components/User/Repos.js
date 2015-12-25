@@ -1,7 +1,7 @@
 import React from 'react';
 import { _ } from 'underscore';
 
-const Repos = React.createClass({
+class Repos extends React.Component {
   render() {
     const repoList = _.map(this.props.repos, (repo) => {
       return (
@@ -21,6 +21,6 @@ const Repos = React.createClass({
       </ul>
     );
   }
-});
+}
 
 export default Repos;
