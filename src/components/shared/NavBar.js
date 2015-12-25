@@ -2,7 +2,7 @@ import React from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 
-export class NavBar extends React.Component {
+class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,3 +78,5 @@ export class NavBar extends React.Component {
     );
   }
 }
+
+export default NavBar;
