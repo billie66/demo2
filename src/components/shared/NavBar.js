@@ -2,35 +2,36 @@ import React from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 
-const NavBar = React.createClass({
-  getInitialState() {
-    return {
+export class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       tabIndex: '0',
-    }
-  },
+    };
+  }
 
   componentWillMount() {
     this.setState({
       tabIndex: this._getSelectedIndex(),
     });
-  },
+  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       tabIndex: this._getSelectedIndex(),
     });
-  },
+  }
 
   _handleTabsChange(value, e, tab) {
     this.props.history.pushState(null, tab.props.route)
     this.setState({tabsIndex: this._getSelectedIndex()});
-  },
+  }
 
   _getSelectedIndex() {
     return this.props.history.isActive('/home') ? '1' :
       this.props.history.isActive('/account') ? '2' :
       this.props.history.isActive('/about') ? '3' : '0';
-  },
+  }
 
   render() {
     let styles = {
@@ -56,7 +57,7 @@ const NavBar = React.createClass({
           tabItemContainerStyle={{backgroundColor: 'transparent'}}
           inkBarStyle={styles.inkBar}
           value={this.state.tabIndex}
-          onChange={this._handleTabsChange}>
+          onChange={this._handleTabsChange.bind(this)}>
           <Tab
             value='1'
             label='Home'
@@ -76,6 +77,4 @@ const NavBar = React.createClass({
       </div>
     );
   }
-});
-
-export default NavBar;
+}
