@@ -9,20 +9,22 @@ import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
 import { _ } from 'underscore';
 
-const Account = React.createClass({
-  getInitialState() {
+class Account extends React.Component {
+  constructor(props) {
+    super(props);
+
     let minDate = new Date();
     let maxDate = new Date();
     minDate.setFullYear(minDate.getFullYear() - 1);
     minDate.setHours(0, 0, 0, 0);
 
-    return {
+    this.state = {
       minDate: minDate,
       repos: [],
       user: {},
       birthday: {},
     };
-  },
+  }
 
   _handleSubmit(e) {
     e.preventDefault();
@@ -36,7 +38,7 @@ const Account = React.createClass({
           repos: data.repos
         });
       });
-  },
+  }
 
   render() {
     let GitHubInfo;
@@ -64,7 +66,7 @@ const Account = React.createClass({
             autoOk={false}
             minDate={this.state.minDate}  />
 
-          <form onSubmit={this._handleSubmit}>
+          <form onSubmit={this._handleSubmit.bind(this)}>
             <TextField
               hintText="Github Account"
               ref='username'/>
@@ -80,6 +82,6 @@ const Account = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Account;
