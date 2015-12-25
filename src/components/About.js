@@ -2,7 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
 import AvatarURL from '../assets/peter.png';
 
-const About = React.createClass({
+class About extends React.Component {
   render() {
     return (
       <div className="about">
@@ -37,6 +37,6 @@ const About = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default About;

@@ -1,7 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-const Home = React.createClass({
+class Home extends React.Component {
   render() {
     return (
       <div className="home">
@@ -11,6 +11,6 @@ const Home = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Home;
