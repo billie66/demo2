@@ -31,6 +31,8 @@ export class App extends React.Component {
 }
 ```
 
+原因参考 http://ctheu.com/2015/02/26/react-server-side-with-es6-syntax/
+
 ### 借助 devtool 配置选项生成 sourcemaps
 
 [devtool](https://webpack.github.io/docs/configuration.html#devtool)
