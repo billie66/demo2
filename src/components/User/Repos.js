@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { _ } from 'underscore';
 
-class Repos extends React.Component {
+class Repos extends Component {
   render() {
     const repoList = _.map(this.props.repos, (repo) => {
       return (

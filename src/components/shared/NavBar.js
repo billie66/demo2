@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 
-class NavBar extends React.Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {

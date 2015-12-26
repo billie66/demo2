@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import DatePicker from 'material-ui/lib/date-picker/date-picker';
 import RaisedButton from 'material-ui/lib/raised-button';
 import FlatButton from 'material-ui/lib/flat-button';
@@ -9,7 +9,7 @@ import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
 import { _ } from 'underscore';
 
-class Account extends React.Component {
+class Account extends Component {
   constructor(props) {
     super(props);
 

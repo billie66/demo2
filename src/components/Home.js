@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-class Home extends React.Component {
+class Home extends Component {
   render() {
     return (
       <div className="home">

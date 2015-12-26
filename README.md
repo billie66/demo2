@@ -6,11 +6,13 @@ npm install --save history@1.13.1 react-router@1.0.0
 
 ### 组件规范
 
-编写一个 App 组件，文件名为 App.js
-```
-import React from 'react';
+ES6 模块的导出方式可以分为两类：named export && default export
 
-class App extends React.Component {
+下面是 default export 的实例，
+```
+// App.jsx
+import React, { Component } from 'react';
+class App extends Component {
   render() {
     return (
       <div>App block</div>
@@ -19,19 +21,34 @@ class App extends React.Component {
 }
 
 export default App;
+
+// 在 main.jsx 文件中使用 App 组件
+
+import App from './App.jsx'
 ```
 
-按照以上规范定义的组件，可以正常显示，若按照下面的规范则不可以：
+按照 named export 方式导出模块：
 
 ```
-import React from 'react'
+// App.jsx
+import React, { Component } from 'react';
 
 export class App extends React.Component {
   ...
 }
+
+// main.jsx
+// 注意模块名必须用花括号括起来
+import { App } from './App.jsx'
 ```
 
-原因参考 http://ctheu.com/2015/02/26/react-server-side-with-es6-syntax/
+另外，把 React 导入到 ES6 模块并没有标准规则，不过下面的语句，
+
+```
+ import React, { Component } from 'react';
+```
+
+是多数人都认可的写法，参考 React 论坛中的一篇[帖子](https://discuss.reactjs.org/t/es6-import-as-react-vs-import-react/360)
 
 ### 借助 devtool 配置选项生成 sourcemaps
 

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppBar from 'material-ui/lib/app-bar';
 import '../stylesheets/main.scss';
 import NavBar from './shared/NavBar';
 import AppLeftNav from './shared/AppLeftNav';
 import Footer from './shared/Footer';
 
-class App extends React.Component {
+class App extends Component {
   componentWillMount() {
     let setTabsState = function() {
       this.setState({renderTabs: !(document.body.clientWidth <= 700)});

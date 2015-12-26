@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LeftNav from 'material-ui/lib/left-nav';
 
 import List from 'material-ui/lib/lists/list';
@@ -7,7 +7,7 @@ import {SelectableContainerEnhance} from 'material-ui/lib/hoc/selectable-enhance
 
 const SelectableList = SelectableContainerEnhance(List);
 
-class AppLeftNav extends React.Component {
+class AppLeftNav extends Component {
   constructor(props) {
     super(props);
     this.state = {

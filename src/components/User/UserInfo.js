@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { _ } from 'underscore';
 
-class UserInfo extends React.Component {
+class UserInfo extends Component {
   render() {
     const userInfo = this.props.userInfo;
     return (

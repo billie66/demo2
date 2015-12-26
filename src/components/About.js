@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RaisedButton from 'material-ui/lib/raised-button';
 import AvatarURL from '../assets/peter.png';
 
-class About extends React.Component {
+class About extends Component {
   render() {
     return (
       <div className="about">
