@@ -7,7 +7,7 @@ import Card from 'material-ui/lib/card/card';
 import helpers from './utils/helpers';
 import Repos from './user/Repos';
 import UserInfo from './user/UserInfo';
-import { _ } from 'underscore';
+import isEmpty from 'lodash/lang/isEmpty';
 
 class Account extends Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class Account extends Component {
   render() {
     let GitHubInfo;
 
-    if(!_.isEmpty(this.state.user)) {
+    if(!isEmpty(this.state.user)) {
       GitHubInfo = (
         <div>
           <UserInfo userInfo={this.state.user} />

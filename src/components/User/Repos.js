@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { _ } from 'underscore';
+import map from 'lodash/collection/map';
 
 class Repos extends Component {
   render() {
-    const repoList = _.map(this.props.repos, (repo) => {
+    const repoList = map(this.props.repos, (repo) => {
       return (
         <li key={repo.id}>
           <div>
