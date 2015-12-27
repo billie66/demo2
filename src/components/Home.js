@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import RaisedButton from 'material-ui/lib/raised-button';
 
 class Home extends Component {
   render() {
